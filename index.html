@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="weather-container">
+        <div class="front">
+            <div class="after">
+                <img src="https://www.davidmulo.green-kenya.org/wp-content/uploads/2020/08/loadingl.gif" alt="">
+            </div>
+            <p class="day">Day</p>
+            <p class="date">Date</p>
+            <p class="loc">Paris, FR</p>
+            <img class="emoticon">
+            <p class="temp">29 C</p>
+            <p class="condition">Sunny</p>
+        </div>
+        <div class="mid">
+            <div class="block">
+                <div class="data-containers">
+                    <p>PRECIPITATION</p>
+                    <p class="precip data"></p>
+                </div>
+                <div class="data-containers">
+                    <p>HUMIDITY</p>
+                    <p class="humid data"></p>
+                </div>
+                <div class="data-containers">
+                    <p>WIND</p>
+                    <p class="wind data"></p>
+                </div>
+            </div>
+            
+
+            <button class="change-loc">Change Location</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

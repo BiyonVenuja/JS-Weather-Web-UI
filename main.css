@@ -1,0 +1,166 @@
+:root{
+    --height:350px;
+    --width:300px;
+    --border-radius:30px;
+    --box-shadow:0px 0px 20px 0px rgba(0,0,0,0.5);
+    --gradient:linear-gradient(135deg,rgb(100,205,217),rgb(83,100,233));
+}
+*{
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(54,61,76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-container{
+    transform-style: preserve-3d;
+    perspective: 50em;
+}
+
+.front{
+    border-radius:var(--border-radius) ;
+    height: var(--height);
+    width: var(--width);
+    padding-inline: 30px;
+    padding-block:20px ;
+    background: url('https://media.istockphoto.com/photos/white-clouds-and-sun-in-blue-sky-picture-id1200224188?b=1&k=20&m=1200224188&s=170667a&w=0&h=YX-D4NgRcua9IJiVDMaVpnwvsREBejmxWj76zkfAMxs='),var(--gradient);
+    background-blend-mode:soft-light;
+    background-size: cover;
+    box-shadow:var(--box-shadow);
+    position: absolute;
+    transition: transform 200ms;
+}
+
+.mid{
+    padding-inline: 30px;
+    padding-block:20px;
+    border-radius:var(--border-radius) ;
+    height: var(--height);
+    width: var(--width);
+    background-color: rgb(32,40,49);
+    box-shadow:var(--box-shadow) ;
+    transform: translateZ(-100px);
+    transition: all 200ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather-container[data='loaded']:hover .front,.weather-container[data='loaded']:active .front{
+    transform: translateZ(20px) translateX(-220px) rotateY(45deg);
+}
+
+.weather-container[data='loaded']:hover .mid{
+    width: 350px;
+    padding-left: 55px;
+    padding-bottom: 30px;
+}
+
+.front > *{
+    padding: 0px;
+    margin: 0px;
+}
+.day{
+    font-size: 2.3rem;
+}
+
+.date{
+    margin-top: -5px;
+    font-size: 1rem;
+}
+.loc{
+
+}
+.emoticon{
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    bottom: 60px;
+    left: -10px;
+    transform: scale(.80);
+    transition: transform 500ms 500ms;
+}
+
+.temp{
+    font-size: 4rem;
+    position: absolute;
+    bottom: 30px;
+}
+
+.condition{
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.front .after{
+    content: '';
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--gradient);
+    inset: 0;
+    border-radius: var(--border-radius);
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.after > img{
+    transform: scale(0.3);
+    mix-blend-mode: color-burn;
+   
+}
+
+.none{
+    opacity: 0 !important;
+}
+
+.data-containers{
+    display: flex;
+justify-content: space-between;
+    margin-block: 15px;
+
+}
+.data-containers >p{
+    padding: 0px;
+    margin: 0px;
+}
+.data{
+    color: rgb(136, 141, 153);
+}
+
+
+.change-loc{
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding-block:5px;
+    background: var(--gradient);
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width:400px){
+    .weather-container[data='loaded']:hover .front,.weather-container[data='loaded']:active .front{
+        transform:translateY(-220px) translateZ(-50px) translateX(20px)  rotateX(-45deg);
+    }
+    
+    .weather-container[data='loaded']:hover .mid{
+    transform: translateY(40px);
+       padding: 30px;
+    }
+    
+}
