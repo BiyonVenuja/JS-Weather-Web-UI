@@ -33,7 +33,7 @@ req.onreadystatechange = () => {
 }
 
 navigator.geolocation.getCurrentPosition((loc) => {
-    req.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${loc.coords.latitude}&lon=${loc.coords.longitude}&units=metric&appid=c8a1912e4e5fe1199d97e53095d77db4`, true);
+    req.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${loc.coords.latitude}&lon=${loc.coords.longitude}&units=metric&appid=YourOpenWeatherMapToken`, true);
     req.send();
 });
 
